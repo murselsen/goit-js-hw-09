@@ -13,12 +13,11 @@ form.addEventListener('input', event => {
   );
 });
 
-const { email, message } =
-  JSON.parse(localStorage.getItem('feedback-form-state')) || null;
-if (email) {
+const data = JSON.parse(localStorage.getItem('feedback-form-state')) || null;
+if (data.email) {
   form.elements.email.value = email;
 }
-if (message) {
+if (data.message) {
   form.elements.message.value = message;
 }
 
