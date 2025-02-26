@@ -15,11 +15,9 @@ form.addEventListener('input', event => {
 
 let data = localStorage.getItem('feedback-form-state') || null;
 data = JSON.parse(data);
-if (data.email) {
-  form.elements.email.value = email;
-}
-if (data.message) {
-  form.elements.message.value = message;
+if (data !== null) {
+  form.elements.email.value = data.email;
+  form.elements.message.value = data.message;
 }
 
 form.addEventListener('submit', event => {
